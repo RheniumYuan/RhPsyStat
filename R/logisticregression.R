@@ -19,7 +19,7 @@
 #'
 
 logisticregression <- function(formula, data, hoslemG = 10){
-  fit <- glm(formula, data = data, family = binomial('logit'))
+  fit <- glm(formula, data = data, family = binomial)
   print(summary(fit))
   print(anova(fit, test = 'Chisq'))
   print('-2*LL difference:(null - model):')
