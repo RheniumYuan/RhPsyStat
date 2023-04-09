@@ -30,13 +30,13 @@ logisticregression <- function(formula, data, hoslemG = 10){
   print(with(fit, pchisq(null.deviance - deviance, df.null - df.residual, lower.tail = FALSE)))
   print('Wald Test for intercept and each coefficient')
   for (i in 1:length(fit$coefficients)){
-    print(wald.test(b=coef(fit),Sigma=vcov(fit),Terms=i:i))
+    print(aod::wald.test(b=coef(fit),Sigma=vcov(fit),Terms=i:i))
   }
-  print(hoslem.test(x = fit$y, y = fitted(fit), g = hoslemG))
+  print(ResourceSelection::hoslem.test(x = fit$y, y = fitted(fit), g = hoslemG))
   print(confint(fit))
   print(exp(cbind(OR = coef(fit), confint(fit))))
   print(logLik(fit))
-  print(pR2(fit))
+  print(pscl::pR2(fit))
   pred_y = predict(fit,type="response")
   classification_df = data.frame(observed_y = fit$y,
                                  predicted_y = round(pred_y,0))
