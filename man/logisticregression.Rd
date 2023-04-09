@@ -4,35 +4,31 @@
 \alias{logisticregression}
 \title{Logistic Regression}
 \usage{
-logisticregression(formula, data)
+logisticregression(formula, data, hoslemG = 10)
 }
 \arguments{
 \item{formula}{The formula of the model. Usually y ~ x1 + x2 + ...}
 
 \item{data}{The dataset for your regression.}
+
+\item{hoslemG}{g in hoslem test}
 }
 \value{
-A list of 12 contents.
+The summary of the model, including Coefficients and their significance, and How is the model compared to the intercept-only (null) model
 
-1) The summary of the model, including Coefficients and their significance, and How is the model compared to the intercept-only (null) model
+Test of each predictor of the logistic model
 
-2) Test of each predictor of the logistic model
+Wald Test for intercept and each coefficient
 
-3) -2*LL difference:(null - model)
+Hosmer and Lemeshow goodness of fit (GOF) test
 
-4) df of this chi-square test, the difference in parameter number
+Odds ratio with its confidence interval for each predictor
 
-5) The chi-square of The overall test of the model
+Log likelihood
 
-6) Hosmer and Lemeshow goodness of fit (GOF) test
+Model fitting quality: r2CU is the Nagelkerke R2; r2ML is the Cox&Snell R2
 
-7~9) Examining each predictor
-
-10) Odds ratio with its confidence interval for each predictor
-
-11) Log likelihood
-
-12) Model fitting quality; r2CU is the Nagelkerke R2; r2ML is the Cox&Snell R2
+Classification Table
 }
 \description{
 Logistic regression is for fitting a regression curve to data in which the dependent variable is dichotomous.

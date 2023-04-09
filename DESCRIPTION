@@ -1,7 +1,7 @@
 Package: RhPsyStat
 Type: Package
 Title: Rhenium's R package for Psychological Statistics
-Version: 0.1.0
+Version: 0.1.1
 Author: Rhenium Yuan
 Maintainer: Rheniu Yuan <rheniumyuan@foxmail.com>
 Description: Rhenium Yuan's R package for Psychological Statistics.
